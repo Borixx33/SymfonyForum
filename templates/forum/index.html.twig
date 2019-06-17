@@ -1,36 +1,15 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <section class="article">
-        <article>
-            <h2>Titre de l'aticle</h2>
-            <div class="metadata">Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-            <div class="content"><img src="http://placehold.it/350*150" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse libero molestiae possimus ut! Facilis,
-                    sequi.</p>
-                <p>Ab amet, animi, autem doloremque eligendi exercitationem fuga nesciunt nulla perspiciatis quibusdam
-                    ratione repellendus tempore.</p>
-                <a href="" class="btn-primary">Lire la suite</a>
-            </div>
-        </article>
-        <article>
-            <h2>Titre de l'aticle</h2>
-            <div class="metadata">Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-            <div class="content"><img src="http://placehold.it/350*150" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio eius et illo nesciunt omnis!
-                    Possimus.</p>
-                <p>Accusamus corporis dolorem, doloribus facilis fugit, iste numquam perferendis placeat quos reiciendis
-                    reprehenderit repudiandae sapiente?</p>
-                <a href="" class="btn-primary">Lire la suite</a></div>
-        </article>
-        <article>
-            <h2>Titre de l'aticle</h2>
-            <div class="metadata">Ecrit le 10/05/2018 à 19:00 dans la catégorie Politique</div>
-            <div class="content"><img src="http://placehold.it/350*150" alt="">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolor eius ex iure numquam
-                    quo?</p>
-                <p>A ad blanditiis cum deserunt eius in incidunt itaque necessitatibus officia, quo, recusandae
-                    repellat, voluptatem.</p>
-                <a href="" class="btn-primary">Lire la suite</a></div>
-        </article>
-    </section>
+    {% for article in articles %}
+        <section class="article">
+                <article>
+                    <h2>{{ article.title }}</h2>
+                    <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/y') }} à {{ article.createdAt | date('H:i') }} dans la catégorie Politique</div>
+                    <div class="content"><img src="{{ article.image }}" alt="">
+                        {{ article.content | raw}}
+                        <a href="{{ path('forum_show', {'id': article.id}) }}" class="btn-primary">Lire la suite</a>
+                    </div>
+                </article>
+        </section>
+    {% endfor %}
 {% endblock %}
