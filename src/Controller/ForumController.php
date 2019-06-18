@@ -32,6 +32,13 @@ ForumController extends AbstractController
     }
 
     /**
+     * @Route("/forum/new", name="forum_create")
+     */
+    public function create(){
+        return $this->render('form/create.html.twig');
+    }
+
+    /**
      * @Route("/forum/{id}", name="forum_show")
      */
     public function show(Article $article){
@@ -39,6 +46,6 @@ ForumController extends AbstractController
         return $this->render('forum/show.html.twig', [
             'article' => $article
         ]);
-
     }
+
 }
