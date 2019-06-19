@@ -259,7 +259,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "4.2",
-            "ref": "f5cb896a182fa2b845c41d287d03cd61279b7ba5"
+            "ref": "d18d12faf9a5ba6bb0a7e79da0825ead58ff68ba"
         },
         "files": [
             "./config/bootstrap.php",
@@ -478,7 +478,7 @@
             "repo": "github.com/symfony/recipes",
             "branch": "master",
             "version": "4.3",
-            "ref": "48a8e5ef925e82aa7d665c887cd1fa60f8b7921d"
+            "ref": "d902da3e4952f18d3bf05aab29512eb61cabd869"
         },
         "files": [
             "./config/packages/test/validator.yaml",
